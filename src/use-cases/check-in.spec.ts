@@ -3,7 +3,6 @@ import { InMemoryCheckInsRepository } from '../repositories/in-memory/in-memory-
 import { CheckInUseCase } from './check-in';
 import { InMemoryGymsRepository } from '../repositories/in-memory/in-memory-gyms-repository';
 import { Decimal } from '@prisma/client/runtime';
-import { ResourceNotFoundError } from './errors/resource-not-found-error';
 import { MaxDistanceError } from './errors/max-distance-error';
 import { MaxNumberOfCheckInsError } from './errors/max-number-of-check-ins-error';
 

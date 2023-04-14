@@ -18,12 +18,12 @@ export class CreateGymUseCase {
 
   async execute({ title, description, phone, latitude, longitude }: CreateGymUseCaseRequest): Promise<CreateGymUseCaseReponse> {
     const gym = await this.gymsRepository.create({
-        title,
-        description,
-        phone,
-        latitude,
-        longitude
-    })
+      title,
+      description,
+      phone,
+      latitude,
+      longitude
+    });
 
     return { gym };
   }

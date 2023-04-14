@@ -1,4 +1,4 @@
-import type { User } from "@prisma/client";
+import { User } from "@prisma/client";
 import { hash } from "bcryptjs";
 import { UsersRepository } from "../repositories/users-repository";
 import { EmailAlreadyExistsError } from "./errors/email-already-exists-error";
