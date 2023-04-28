@@ -4,6 +4,7 @@ import { createCheckIn } from "./create";
 import { validate } from "./validate";
 import { history } from "./history";
 import { metrics } from "./metrics";
+import { verifyUserRole } from "../../middlewares/verify-user-role";
 
 export async function checkInsRoutes(app: FastifyInstance) {
   // middleware de authenticação para todas as rotas:
@@ -14,6 +15,6 @@ export async function checkInsRoutes(app: FastifyInstance) {
 
   app.post('/gyms/:gymId/check-ins', createCheckIn);
 
-  app.patch('/check-ins/:checkInId/validate', validate);
+  app.patch('/check-ins/:checkInId/validate', { onRequest: [verifyUserRole('ADMIN')] }, validate);
 
 }
